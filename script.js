@@ -47,39 +47,22 @@ function countFlavors(input) {
 
     //Build object to keep track of flavors
     const totalFlavors = {
-        vanilla: 0,
-        strawberry: 0,
-        coffee: 0,
     }
 
     //Convert the array of strings into an array of numbers.
     for (let i = 0; i < flavorsArray.length; i++) {
 
-        // const key = flavorsArray[i];
+        //Initialize key to contain the flavors array
+        const key = flavorsArray[i];
 
-        //If flavor hasn't shown up yet create a new key
-        // if (key !== totalFlavors) {
-        //     totalFlavors[key] = key.length;
-        // }
+        //If flavor is in object add flavor to object
+        if (totalFlavors[key]) {
+             totalFlavors[key]++;
 
-        // else if (key === totalFlavors) {
-        //     totalFlavors[key] = key.length;
-        // }
-
-        //If the flavor is vanilla add to object
-        if (flavorsArray[i] === 'vanilla') {
-            totalFlavors.vanilla += 1;
-        }
-
-        //If the flavor is strawberry add to object
-        else if (flavorsArray[i] === 'strawberry') {
-            totalFlavors.strawberry += 1;
-        }
-
-        //If the flavor is coffee add to object
-        else if (flavorsArray[i] === 'coffee') {
-            totalFlavors.coffee += 1;
-        }
+         //Else add word to object with count of one.
+         } else {
+            totalFlavors[key] = 1;
+         }
 
     }
 
